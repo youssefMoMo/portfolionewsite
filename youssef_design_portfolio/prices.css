@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  font-family: 'Fredoka One', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  animation: fadeInPage 2s ease-in-out;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* canvas تأثير */
+#specialEffects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pricing-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 30, 30, 0.85);
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 140, 255, 0.3);
+  border: 1px solid rgba(0, 110, 255, 0.2);
+  backdrop-filter: blur(5px);
+  max-width: 700px;
+  text-align: center;
+  animation: zoomIn 1.5s ease-out, softGlow 5s ease-in-out infinite;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ✨ تأثير وميض ناعم */
+@keyframes softGlow {
+  0% {
+    box-shadow: 0 0 30px rgba(0, 225, 255, 0.3);
+    border-color: rgba(0, 174, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 174, 255, 0.5);
+    border-color: rgba(0, 81, 255, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(0, 204, 255, 0.3);
+    border-color: rgba(0, 140, 255, 0.2);
+  }
+}
+
+.title {
+  font-size: 3.2rem;
+  color: #15ff00;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0, 255, 34, 0.473);
+  animation: slideDown 1.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-details p {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  text-align: start;
+}
+
+.pricing-details p:nth-child(1) { animation-delay: 0.8s; }
+.pricing-details p:nth-child(2) { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back-btn {
+  margin-top: 40px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  background-color: #000000;
+  border: 2px solid #00b7ff;
+  color: #009dff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+}
+
+.back-btn::before {
+  content: '';
+  position: absolute;
+  width: 140%;
+  height: 100%;
+  top: 0;
+  left: -140%;
+  background: linear-gradient(120deg, #0077ff, #00f7ff, #003cff);
+  transition: 0.4s ease-in-out;
+  z-index: -1;
+  transform: skewX(-20deg);
+}
+
+.back-btn:hover::before {
+  left: 0;
+}
+
+.back-btn:hover {
+  color: #000;
+}
