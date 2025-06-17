@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youssef_design Portfolio</title>
+
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- استدعاء الخط FredokaOne -->
+    <link href="https://fonts.cdnfonts.com/css/FredokaOne-Regular" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="home-header">
+      <div class="home-header-container">
+       
+        <div class="cairo-clock" id="cairoClock">--:--:--</div>
+      
+        <div class="buttons">
+          <button class="btn" onclick="location.href='index.html'"><span class="icon">🏠</span><p>Home</p></button>
+          <button class="btn" onclick="location.href='reviews.html'"><span class="icon">🌟</span><p>Reviews</p></button>
+          <button class="btn" onclick="location.href='rules.html'"><span class="icon">📜</span><p>TERMS OF SERVICE</p></button>
+          <button class="btn" onclick="location.href='prices.html'"><span class="icon">💰</span><p>Prices</p></button>
+          <button class="btn" onclick="location.href='Portfolio.html'"><span class="icon">🖼️</span><p>Portfolio</p></button>
+        </div>
+      </div>
+
+    </header>
+    <div class="stars-container"></div>
+    <div class="app-container">
+      <div class="profile-section">
+
+        <img src="MyLogo/Logo.png" alt="Logo" class="profile-img" />
+        <h1 class="profile-name">youssef_design</h1>
+
+        <div class="profile-description-frame">
+          <p class="profile-description-text">
+            Hey There! 👋<br><br>
+            Hello developers! I’m Youssef, a 20-year-old full-time UI/UX designer with 2 years of experience crafting cartoony and engaging interfaces for experiences. I will create unique styles, import your designs at low price rates with fast delivery!<br><br>
+            
+            <strong>What I Include:🎯</strong><br>
+            - Designed UI & optimized UX.<br>
+            - Importing all designed elements to <br>
+            - Low prices with high quality.<br>
+            - Speed & Delivery time is on point.<br><br>
+        
+            <strong>What You Get?❓</strong><br>
+            You will be granted up to 5 revisions during our commissions and we will continue until you are fully satisfied with the final design. I will communicate & keep you involved on every step while working on your project! Designs will be sent imported to Studio and scaled for all devices properly.<br><br>
+        
+            Being a full time UI/UX artist helps YOUR PROJECT get the care it deserves, being able to communicate on a daily-basis helps you and your project achieve its goals.<br><br>
+        
+            💸 I work with PayPal payment only. I send the UI as organized PNGs or imported. It will be imported if you choose to hire me for designing, and import prices apply if you have pre-made designs. Refunds are acceptable. Looking forward to your message!
+          </p>
+        </div>        
+      </div>
+
+      
+      <!-- الأقسام الخاصة بكل زر -->
+      <div class="sections">
+        <section id="section-start" class="section">
+          مرحبًا بك في صفحة youssef_design 🌟
+        </section>
+        <section id="section-commission" class="section">
+          <h2>طلب كوميشين ✍️</h2>
+          <p>املأ النموذج التالي إذا كنت ترغب في طلب تصميم خاص:</p>
+          <form class="commission-form">
+            <input type="text" placeholder="اسمك" required />
+            <input type="email" placeholder="بريدك الإلكتروني" required />
+            <textarea placeholder="تفاصيل التصميم المطلوب..." required></textarea>
+            <button type="submit">إرسال الطلب</button>
+          </form>
+        </section>        
+        </section>
+        <section id="section-rules" class="section">قسم القوانين 📜</section>
+        <section id="section-prices" class="section">قسم الأسعار 💰</section>
+        <section id="section-works" class="section">قسم عرض الأعمال 🎨</section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      const cairoClock = document.getElementById('cairoClock');
+      let clockInterval;
+      let timeout;
+    
+      function updateClock() {
+        const now = new Date();
+        const options = {
+          timeZone: 'Africa/Cairo',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        };
+        const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
+        cairoClock.textContent = timeString;
+      }
+    
+      function startClock() {
+        updateClock();
+        clockInterval = setInterval(updateClock, 1000);
+      }
+    
+      function stopClock() {
+        clearInterval(clockInterval);
+      }
+  
+      startClock();
+    
+      cairoClock.addEventListener('mouseenter', () => {
+        stopClock();
+        cairoClock.textContent = 'GMT+3';
+        clearTimeout(timeout); 
+      });
+
+      cairoClock.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+          startClock();
+        }, 6000); 
+      });
+    </script>
+    <div class="stars-bg"></div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap">
+</head>
+<body>
+  <div class="animated-bg" id="animated-bg"></div>
+  <div class="portfolio-wrapper">
+    <h1 class="portfolio-title">last my work</h1>
+
+    <div class="portfolio-centainer">
+      <!-- حط الصور هنا -->
+      <img src="MyLogo/last my work/work1.png" alt="Work 1" class="portfolio-image" />
+      <img src="MyLogo/last my work/work2.png" alt="Work 2" class="portfolio-image" />
+      <img src="MyLogo/last my work/work3.png" alt="Work 3" class="portfolio-image" />
+      <img src="MyLogo/last my work/Work4.png" alt="Work 4" class="portfolio-image" />
+      <img src="MyLogo/last my work/work5.png" alt="Work 5" class="portfolio-image" />
+      <img src="MyLogo/last my work/work6.png" alt="Work 6" class="portfolio-image" />
+      <img src="MyLogo/last my work/work7.png" alt="Work 7" class="portfolio-image" />
+      <img src="MyLogo/last my work/work8.png" alt="Work 8" class="portfolio-image" />
+      <!-- تقدر تزود صور برحتك -->
+    </div>
+
+    <!-- زر جديد للرجوع للصفحة الرئيسية -->
+    <a href="index.html" class="back-button">Back to Home</a>
+  </div>
+
+  <!-- البوب أب لما نضغط على الصورة -->
+  <div class="popup" id="popup">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <img src="" alt="Full Image" id="popup-img" />
+  </div>
+
+  <script src="portfolio.js"></script>
+
+  <script>
+    const bg = document.getElementById('animated-bg');
+    for (let i = 0; i < 60; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${6 + Math.random() * 10}s`;
+      star.style.opacity = Math.random();
+      bg.appendChild(star);
+    }
+  </script>
+  
+</body>
+</html>
